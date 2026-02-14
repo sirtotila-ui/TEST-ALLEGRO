@@ -1,0 +1,451 @@
+:root {
+  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  /* Theme: default light (overridden by prefers-color-scheme or data-theme) */
+  --bg: #ffffff;
+  --bg-alt: #fff8f4;
+  --bg-hero: linear-gradient(135deg, #fff5f0 0%, #fff0e8 50%, #ffe8d6 100%);
+  --bg-dark: linear-gradient(180deg, #1a1a2e 0%, #2d2d44 100%);
+  --bg-pricing: linear-gradient(135deg, #fff5f0, #ffe8d6);
+  --surface: #ffffff;
+  --surface-alt: #fff8f4;
+  --surface-card: #fafafa;
+  --surface-card-alt: rgba(255, 255, 255, 0.06);
+  --text: #1a1a2e;
+  --text-muted: #666666;
+  --text-muted-2: #888888;
+  --text-muted-3: #555555;
+  --text-muted-4: #777777;
+  --text-muted-5: #999999;
+  --text-muted-6: #aaaaaa;
+  --text-on-dark: #ffffff;
+  --text-on-dark-muted: rgba(255, 255, 255, 0.6);
+  --text-on-dark-muted-2: rgba(255, 255, 255, 0.5);
+  --text-on-dark-muted-3: rgba(255, 255, 255, 0.3);
+  --accent: #ff6b35;
+  --accent-soft: #fff0e8;
+  --accent-soft-2: #ffe0cc;
+  --border: #ffe8d6;
+  --border-alt: #eeeeee;
+  --border-alt-2: #dddddd;
+  --border-dark: rgba(255, 255, 255, 0.08);
+  --border-dark-2: rgba(255, 255, 255, 0.1);
+  --nav-bg: rgba(255, 255, 255, 0.97);
+  --shadow-accent: rgba(255, 107, 53, 0.35);
+  --shadow-accent-2: rgba(255, 107, 53, 0.12);
+  --shadow-accent-3: rgba(255, 107, 53, 0.4);
+  --blob-hero: rgba(255, 107, 53, 0.08);
+  --blob-hero-2: rgba(255, 168, 59, 0.1);
+  --mesh-1: rgba(255, 107, 53, 0.18);
+  --mesh-2: rgba(255, 168, 59, 0.14);
+  --mesh-3: rgba(255, 140, 80, 0.12);
+  --mesh-4: rgba(255, 200, 150, 0.1);
+  --divider: #f0f0f0;
+  --card-glass-bg-start: rgba(255, 255, 255, 0.1);
+  --card-glass-bg-end: rgba(255, 255, 255, 0.05);
+  --card-glass-border: rgba(255, 107, 53, 0.15);
+  --card-glass-fallback: rgba(255, 255, 255, 0.92);
+}
+
+@media (prefers-color-scheme: dark) {
+  body:not([data-theme]) {
+    --bg: #0f0f14;
+    --bg-alt: #1a1a22;
+    --bg-hero: linear-gradient(135deg, #1a1512 0%, #221a16 50%, #2a1f18 100%);
+    --bg-dark: linear-gradient(180deg, #1a1a2e 0%, #2d2d44 100%);
+    --bg-pricing: linear-gradient(135deg, #1a1512, #2a1f18);
+    --surface: #16161d;
+    --surface-alt: #1e1e28;
+    --surface-card: #1a1a22;
+    --surface-card-alt: rgba(255, 255, 255, 0.06);
+    --text: #f0f0f2;
+    --text-muted: #b0b0b8;
+    --text-muted-2: #90909a;
+    --text-muted-3: #a0a0aa;
+    --text-muted-4: #90909a;
+    --text-muted-5: #80808a;
+    --text-muted-6: #70707a;
+    --text-on-dark: #ffffff;
+    --text-on-dark-muted: rgba(255, 255, 255, 0.6);
+    --text-on-dark-muted-2: rgba(255, 255, 255, 0.5);
+    --text-on-dark-muted-3: rgba(255, 255, 255, 0.3);
+    --accent: #ff7b4d;
+    --accent-soft: #2a201a;
+    --accent-soft-2: #3d2e26;
+    --border: #2a2520;
+    --border-alt: #2a2a32;
+    --border-alt-2: #353540;
+    --border-dark: rgba(255, 255, 255, 0.08);
+    --border-dark-2: rgba(255, 255, 255, 0.1);
+    --nav-bg: rgba(15, 15, 20, 0.97);
+    --shadow-accent: rgba(255, 123, 77, 0.35);
+    --shadow-accent-2: rgba(255, 107, 53, 0.15);
+    --shadow-accent-3: rgba(255, 107, 53, 0.4);
+    --blob-hero: rgba(255, 107, 53, 0.12);
+    --blob-hero-2: rgba(255, 168, 59, 0.08);
+    --mesh-1: rgba(255, 123, 77, 0.2);
+    --mesh-2: rgba(255, 168, 59, 0.12);
+    --mesh-3: rgba(255, 140, 80, 0.1);
+    --mesh-4: rgba(255, 200, 150, 0.08);
+    --divider: #2a2a32;
+  --card-glass-bg-start: rgba(255, 255, 255, 0.08);
+  --card-glass-bg-end: rgba(255, 255, 255, 0.04);
+  --card-glass-border: rgba(255, 255, 255, 0.15);
+  --card-glass-fallback: rgba(22, 22, 29, 0.95);
+  }
+}
+
+body[data-theme="dark"] {
+  --bg: #0f0f14;
+  --bg-alt: #1a1a22;
+  --bg-hero: linear-gradient(135deg, #1a1512 0%, #221a16 50%, #2a1f18 100%);
+  --bg-dark: linear-gradient(180deg, #1a1a2e 0%, #2d2d44 100%);
+  --bg-pricing: linear-gradient(135deg, #1a1512, #2a1f18);
+  --surface: #16161d;
+  --surface-alt: #1e1e28;
+  --surface-card: #1a1a22;
+  --surface-card-alt: rgba(255, 255, 255, 0.06);
+  --text: #f0f0f2;
+  --text-muted: #b0b0b8;
+  --text-muted-2: #90909a;
+  --text-muted-3: #a0a0aa;
+  --text-muted-4: #90909a;
+  --text-muted-5: #80808a;
+  --text-muted-6: #70707a;
+  --text-on-dark: #ffffff;
+  --text-on-dark-muted: rgba(255, 255, 255, 0.6);
+  --text-on-dark-muted-2: rgba(255, 255, 255, 0.5);
+  --text-on-dark-muted-3: rgba(255, 255, 255, 0.3);
+  --accent: #ff7b4d;
+  --accent-soft: #2a201a;
+  --accent-soft-2: #3d2e26;
+  --border: #2a2520;
+  --border-alt: #2a2a32;
+  --border-alt-2: #353540;
+  --border-dark: rgba(255, 255, 255, 0.08);
+  --border-dark-2: rgba(255, 255, 255, 0.1);
+  --nav-bg: rgba(15, 15, 20, 0.97);
+  --shadow-accent: rgba(255, 123, 77, 0.35);
+  --shadow-accent-2: rgba(255, 107, 53, 0.15);
+  --shadow-accent-3: rgba(255, 107, 53, 0.4);
+  --blob-hero: rgba(255, 107, 53, 0.12);
+  --blob-hero-2: rgba(255, 168, 59, 0.08);
+  --mesh-1: rgba(255, 123, 77, 0.2);
+  --mesh-2: rgba(255, 168, 59, 0.12);
+  --mesh-3: rgba(255, 140, 80, 0.1);
+  --mesh-4: rgba(255, 200, 150, 0.08);
+  --divider: #2a2a32;
+  --card-glass-bg-start: rgba(255, 255, 255, 0.08);
+  --card-glass-bg-end: rgba(255, 255, 255, 0.04);
+  --card-glass-border: rgba(255, 255, 255, 0.15);
+  --card-glass-fallback: rgba(22, 22, 29, 0.95);
+}
+
+body[data-theme="light"] {
+  --bg: #ffffff;
+  --bg-alt: #fff8f4;
+  --bg-hero: linear-gradient(135deg, #fff5f0 0%, #fff0e8 50%, #ffe8d6 100%);
+  --bg-dark: linear-gradient(180deg, #1a1a2e 0%, #2d2d44 100%);
+  --bg-pricing: linear-gradient(135deg, #fff5f0, #ffe8d6);
+  --surface: #ffffff;
+  --surface-alt: #fff8f4;
+  --surface-card: #fafafa;
+  --surface-card-alt: rgba(255, 255, 255, 0.06);
+  --text: #1a1a2e;
+  --text-muted: #666666;
+  --text-muted-2: #888888;
+  --text-muted-3: #555555;
+  --text-muted-4: #777777;
+  --text-muted-5: #999999;
+  --text-muted-6: #aaaaaa;
+  --text-on-dark: #ffffff;
+  --text-on-dark-muted: rgba(255, 255, 255, 0.6);
+  --text-on-dark-muted-2: rgba(255, 255, 255, 0.5);
+  --text-on-dark-muted-3: rgba(255, 255, 255, 0.3);
+  --accent: #ff6b35;
+  --accent-soft: #fff0e8;
+  --accent-soft-2: #ffe0cc;
+  --border: #ffe8d6;
+  --border-alt: #eeeeee;
+  --border-alt-2: #dddddd;
+  --border-dark: rgba(255, 255, 255, 0.08);
+  --border-dark-2: rgba(255, 255, 255, 0.1);
+  --nav-bg: rgba(255, 255, 255, 0.97);
+  --shadow-accent: rgba(255, 107, 53, 0.35);
+  --shadow-accent-2: rgba(255, 107, 53, 0.12);
+  --shadow-accent-3: rgba(255, 107, 53, 0.4);
+  --blob-hero: rgba(255, 107, 53, 0.08);
+  --blob-hero-2: rgba(255, 168, 59, 0.1);
+  --mesh-1: rgba(255, 107, 53, 0.18);
+  --mesh-2: rgba(255, 168, 59, 0.14);
+  --mesh-3: rgba(255, 140, 80, 0.12);
+  --mesh-4: rgba(255, 200, 150, 0.1);
+  --divider: #f0f0f0;
+  --card-glass-bg-start: rgba(255, 255, 255, 0.1);
+  --card-glass-bg-end: rgba(255, 255, 255, 0.05);
+  --card-glass-border: rgba(255, 107, 53, 0.15);
+  --card-glass-fallback: rgba(255, 255, 255, 0.92);
+}
+
+/* Hero gradient mesh: blob animati (transform + will-change), blur 80–120px, mix-blend-mode; mobile: 2 blob, blur maggiore */
+@keyframes heroMesh1 {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  33% { transform: translate(8%, -6%) scale(1.05); }
+  66% { transform: translate(-5%, 8%) scale(0.98); }
+}
+@keyframes heroMesh2 {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  33% { transform: translate(-10%, 5%) scale(0.97); }
+  66% { transform: translate(6%, -8%) scale(1.04); }
+}
+@keyframes heroMesh3 {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  50% { transform: translate(-4%, -10%) scale(1.03); }
+}
+@keyframes heroMesh4 {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  50% { transform: translate(7%, 6%) scale(0.99); }
+}
+
+.hero-mesh {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  overflow: hidden;
+}
+
+.hero-mesh-blob {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(90px);
+  will-change: transform;
+  mix-blend-mode: soft-light;
+}
+
+.hero-mesh-blob:nth-child(1) {
+  width: 320px;
+  height: 320px;
+  top: -100px;
+  right: -80px;
+  background: var(--mesh-1);
+  animation: heroMesh1 18s ease-in-out infinite;
+}
+
+.hero-mesh-blob:nth-child(2) {
+  width: 280px;
+  height: 280px;
+  bottom: -80px;
+  left: -60px;
+  background: var(--mesh-2);
+  animation: heroMesh2 16s ease-in-out infinite;
+}
+
+.hero-mesh-blob:nth-child(3) {
+  width: 240px;
+  height: 240px;
+  top: 40%;
+  left: 10%;
+  background: var(--mesh-3);
+  animation: heroMesh3 20s ease-in-out infinite;
+}
+
+.hero-mesh-blob:nth-child(4) {
+  width: 200px;
+  height: 200px;
+  bottom: 30%;
+  right: 15%;
+  background: var(--mesh-4);
+  animation: heroMesh4 15s ease-in-out infinite;
+}
+
+@media (max-width: 768px) {
+  .hero-mesh-blob:nth-child(3),
+  .hero-mesh-blob:nth-child(4) {
+    display: none;
+  }
+  .hero-mesh-blob {
+    filter: blur(120px);
+  }
+}
+
+/* Glassmorphism: card con blur, bordo semi-trasparente, gradiente diagonale; fallback background solido se no backdrop-filter */
+.card-glass {
+  background: linear-gradient(135deg, var(--card-glass-bg-start) 0%, var(--card-glass-bg-end) 100%);
+  border: 1px solid var(--card-glass-border);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+}
+
+@supports not ((backdrop-filter: blur(16px)) or (-webkit-backdrop-filter: blur(16px))) {
+  .card-glass {
+    background: var(--card-glass-fallback);
+  }
+}
+
+#soluzione .card-glass {
+  --card-glass-bg-start: rgba(255, 255, 255, 0.08);
+  --card-glass-bg-end: rgba(255, 255, 255, 0.04);
+  --card-glass-border: rgba(255, 255, 255, 0.15);
+  --card-glass-fallback: rgba(0, 0, 0, 0.25);
+}
+
+#processo .card-glass {
+  border: none;
+}
+
+#pricing .card-glass {
+  --card-glass-border: rgba(255, 107, 53, 0.25);
+}
+
+#root {
+  width: 100%;
+  min-height: 100vh;
+}
+
+a {
+  font-weight: 500;
+  color: #646cff;
+  text-decoration: inherit;
+}
+a:hover {
+  color: #535bf2;
+}
+
+body {
+  margin: 0;
+  width: 100%;
+  min-width: 320px;
+  min-height: 100vh;
+  color: var(--text);
+  background-color: var(--bg);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+#root,
+#root * {
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+h1 {
+  font-size: 3.2em;
+  line-height: 1.1;
+}
+
+button {
+  margin: 0;
+  font: inherit;
+  cursor: pointer;
+}
+
+/* Card hover: lift, stronger shadow, slightly more visible border. Only on devices with hover. */
+.card-hover {
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+}
+
+@media (hover: hover) {
+  .card-hover:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.08), 0 0 0 1px rgba(0, 0, 0, 0.06);
+    border-color: rgba(0, 0, 0, 0.12);
+  }
+
+  /* Keep theme border visibility on light/orange cards without overriding existing border */
+  #problema .card-hover:hover,
+  #servizi .card-hover:hover {
+    border-color: #ffd4bc;
+  }
+
+  #risultati .card-hover:hover {
+    border-color: #ddd;
+  }
+
+  #soluzione .card-hover:hover {
+    border-color: rgba(255, 255, 255, 0.18);
+  }
+
+  #pricing .card-hover:hover {
+    border-color: #e55a2b;
+    box-shadow: 0 12px 32px rgba(255, 107, 53, 0.2), 0 0 0 2px rgba(255, 107, 53, 0.15);
+  }
+
+  /* Process steps: lift + shadow only, no border change */
+  #processo .card-hover:hover {
+    border-color: transparent;
+  }
+
+  body[data-theme="dark"] #problema .card-hover:hover,
+  body[data-theme="dark"] #servizi .card-hover:hover {
+    border-color: var(--accent);
+  }
+}
+
+/* Hero headline text reveal: word-by-word fade-in + translateY, screen-reader safe (opacity only) */
+@keyframes heroReveal {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.hero-reveal-word {
+  opacity: 0;
+  display: inline-block;
+  animation: heroReveal 0.5s ease-out forwards;
+}
+
+.hero-reveal-after {
+  opacity: 0;
+  animation: heroReveal 0.5s ease-out forwards;
+  animation-delay: 700ms;
+}
+
+/* Theme toggle: sun/moon button */
+.theme-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  padding: 0;
+  border: none;
+  border-radius: 10px;
+  background: var(--accent-soft);
+  color: var(--accent);
+  cursor: pointer;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+.theme-toggle:hover {
+  background: var(--accent);
+  color: var(--text-on-dark);
+}
+.theme-toggle svg {
+  width: 20px;
+  height: 20px;
+  fill: currentColor;
+}
+.theme-toggle .theme-icon-sun,
+.theme-toggle .theme-icon-moon {
+  position: absolute;
+}
+.theme-toggle .theme-icon-sun {
+  opacity: 0;
+}
+.theme-toggle .theme-icon-moon {
+  opacity: 1;
+}
+body[data-theme="dark"] .theme-toggle .theme-icon-sun {
+  opacity: 1;
+}
+body[data-theme="dark"] .theme-toggle .theme-icon-moon {
+  opacity: 0;
+}
